@@ -1,7 +1,17 @@
-var Toast = require('../mod/toast.js').Toast
+require('less/index.less');
+
+var Waterfall = require('../mod/waterfall.js')
+var Event = require('../mod/event.js')
+var NoteManager = require('../mod/noteManager.js').NoteManager
 
 
-Toast('hello')
+NoteManager.load()
 
-Toast('world', 4000)
+$('.add-note').on('click', function(){
+  NoteManager.add()
+})
+
+Event.on('waterfall', function(){
+  Waterfall.init($('#content'))
+})
 

@@ -1,0 +1,56 @@
+
+.note{
+  width: 150px;
+  margin: 20px 10px;
+  position: absolute;
+  transition: all 0.5s;
+  // border: 1px solid #ccc;
+  
+  .note-head{
+    height:30px;
+    // border-bottom: 1px solid #ccc;
+    position:relative;
+    cursor: move;
+    
+    &:hover .delete{
+      opacity: 1;
+    }
+    
+    .delete{
+      position: absolute;
+      right: 10px;
+      top:5px;
+      cursor: pointer;
+      opacity: 0;
+      transform: opacity 0.3s;
+      color: #fff;
+    }
+
+  }
+
+  .note-ct{
+    padding: 15px 10px;
+    margin: -1px 0;
+  }
+
+  .note-info{
+    text-align: right;
+    font-size: 14px;
+    padding-right: 10px;
+    color: #fff;
+    padding-bottom: 10px;
+
+    .note-time{
+      font-size: 12px;
+    }
+  }
+
+}
+
+.draggable{
+  opacity: 0.8;
+  cursor:move;
+  transition: none; 
+}
+
+

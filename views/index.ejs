@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/css/style.css' />
+    <title>便利贴</title>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='/css/index.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+
+    <div id="header">
+      <a href="#" class="add-note">添加</a>
+      <ul class="user-info">
+
+        <% if(isLogin){ %>
+        <li><img src="<%= user.avatar %>>"></li>
+        <li><%= user.username %></li>
+        <li>|</li>
+        <li><a href="/auth/logout">注销</a></li>
+        <% }else{ %>
+        <li><a href="/auth/github">GitHub登录</a></li>
+        <% } %>
+
+      </ul>
+    </div>
+
+
+    <div id="content">
+      
+    </div>
+
+
+    <script src="/js/index.js"></script>
   </body>
 </html>
