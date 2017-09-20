@@ -22,12 +22,9 @@ passport.deserializeUser(function(obj, done) {
 passport.use(new GitHubStrategy({
   clientID: 'f89b28319b48cd3b389f',
   clientSecret: 'ebd8aa7125a7f5622483d54eae9a29955026951b',
-  callbackURL: "http://localhost:3000/auth/github/callback"
+  callbackURL: "http://note.xumanxi.site/auth/github/callback"
 },
 function(accessToken, refreshToken, profile, done) {
-  // User.findOrCreate({ githubId: profile.id }, function (err, user) {
-  //   return cb(err, user);
-  // });
   done(null, profile)
 }
 ));
@@ -45,7 +42,6 @@ router.get('/github/callback',
       avatar: req.user._json.avatar_url,
       provider: req.user.provider
     }
-    
     // Successful authentication, redirect home. 
     res.redirect('/');
 });

@@ -42,7 +42,7 @@ router.post('/notes/add', function(req, res, next){
 
 router.post('/notes/edit', function(req, res, next){
   if(!req.session.user){
-    return res.send({status: 1, errorMsg:'没有权限'})
+    return res.send({status: 1, errorMsg:'请先登录'})
   }
   var note = req.body.note
   var uid = req.session.user.id
@@ -56,7 +56,7 @@ router.post('/notes/edit', function(req, res, next){
 
 router.post('/notes/delete', function(req, res, next){
   if(!req.session.user){
-    return res.send({status: 1, errorMsg:'没有权限'})
+    return res.send({status: 1, errorMsg:'请先登录'})
   }
   var uid = req.session.user.id
   Note.destroy({where:{id: req.body.id, uid: req.session.user.id}}).then(function(){
