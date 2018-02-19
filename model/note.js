@@ -4,7 +4,8 @@ var path = require('path')
 const sequelize = new Sequelize(undefined, undefined, undefined, {
   host: 'localhost',
   dialect: 'sqlite',
-  storage: path.join(__dirname, '../database/database.sqlite')
+  storage: path.join(__dirname, '../database/database.sqlite'),
+  operatorsAliases: false
 });
 
 // sequelize

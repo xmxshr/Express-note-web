@@ -4,11 +4,10 @@
   margin: 20px 10px;
   position: absolute;
   transition: all 0.5s;
-  // border: 1px solid #ccc;
-  
+  color: #333;
+
   .note-head{
     height:30px;
-    // border-bottom: 1px solid #ccc;
     position:relative;
     cursor: move;
     
@@ -22,7 +21,7 @@
       top:5px;
       cursor: pointer;
       opacity: 0;
-      transform: opacity 0.3s;
+      transition: opacity 0.3s;
       color: #fff;
     }
 
@@ -31,13 +30,14 @@
   .note-ct{
     padding: 15px 10px;
     margin: -1px 0;
+    outline: none;
   }
 
   .note-info{
     text-align: right;
     font-size: 14px;
     padding-right: 10px;
-    color: #fff;
+    color: #eff;
     padding-bottom: 10px;
 
     .note-time{

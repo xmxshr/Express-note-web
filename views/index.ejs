@@ -9,17 +9,58 @@
 
 
     <div id="header">
-      <a href="#" class="add-note">添加</a>
+      <div class="trademark">
+        <svg class="icon">
+          <use xlink:href="#icon-Notebook"></use>
+        </svg>
+        <!-- <img src="//i.loli.net/2018/02/19/5a8aaa6a9b4f8.png" alt=""> -->
+        <img src="//i.loli.net/2018/02/19/5a8ac820dc717.png" alt="">
+      </div>
+      
+        
       <ul class="user-info">
 
         <% if(isLogin){ %>
+        <li>
+          <a href="#" class="add-note">添 加</a>
+        </li>
         <li><img src="<%= user.avatar %>"></li>
         <li><%= user.username %></li>
         <li>|</li>
-        <li><a href="/auth/logout">注销</a></li>
+        <li>
+          <a href="/auth/logout">
+            <svg class="icon icon-logout1">
+              <use xlink:href="#icon-logout1"></use>
+            </svg>
+            注销
+          </a>
+        </li>
         <% }else{ %>
-        <li><a href="/auth/github">GitHub登录</a></li>
+        <li>
+          <a href="/auth/github">
+            <svg class="icon icon-github">
+              <use xlink:href="#icon-github"></use>
+            </svg>
+            GitHub登录
+          </a>
+        </li>
         <% } %>
+
+        <!-- test -->
+        <!-- <li>
+          <a href="#" class="add-note">添 加</a>
+        </li>
+        <li><div class="img"></div></li>
+        <li>xmxshr</li>
+        <li>|</li>
+        <li>
+          <a href="/auth/logout">
+            <svg class="icon icon-logout1">
+              <use xlink:href="#icon-logout1"></use>
+            </svg>
+            注销
+          </a>
+        </li> -->
 
       </ul>
     </div>
@@ -31,5 +72,6 @@
 
 
     <script src="/js/index.js"></script>
+    <script src="//at.alicdn.com/t/font_570875_oje7jg1moc62bj4i.js"></script>
   </body>
 </html>

@@ -1,6 +1,11 @@
-html,
+html {
+  margin: 0;
+  height: 100%;
+}
 body {
   margin: 0;
+  height: calc(100% - 40px);
+  background: #ECEDEF;
 }
 ul,
 li {
@@ -12,32 +17,81 @@ a {
   text-decoration: none;
   color: #fff;
 }
-body {
-  background-color: #F88192;
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+.icon-github {
+  font-size: 20px;
+}
+.icon-logout1 {
+  margin-right: -5px;
+  margin-left: 5px;
 }
 #header {
   height: 40px;
-  background-color: #aaa;
+  min-width: 900px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #3E3E3E;
   color: #fff;
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
   z-index: 1;
 }
-#header .add-note {
-  float: left;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 4px;
-  margin-top: 5px;
-  margin-left: 20px;
+#header .trademark {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 50px;
+}
+#header .trademark .icon {
+  font-size: 29px;
+}
+#header .trademark img {
+  width: 150px;
+  height: 50px;
+  margin-top: -7px;
 }
 #header .user-info {
-  float: right;
-  margin-top: 5px;
-  margin-right: 20px;
   height: 30px;
   line-height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 40px;
+}
+#header .user-info .add-note {
+  height: 30px;
+  margin-right: 40px;
+  padding: 0 10px;
+  display: inline-block;
+  border-radius: 3px;
+  background: rgba(177, 174, 174, 0.3);
 }
 #header .user-info img {
   width: 25px;
@@ -46,13 +100,21 @@ body {
   margin-top: 3px;
 }
 #header .user-info li {
-  float: left;
-  padding-left: 7px;
-  font-size: 15px;
+  padding-left: 10px;
+  font-size: 16px;
+}
+#header .user-info .img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-top: 3px;
+  background-color: #fff;
 }
 #content {
   margin-top: 40px;
   position: relative;
+  height: 100%;
+  padding: 0 20px;
 }
 .note {
   width: 150px;
@@ -60,6 +122,7 @@ body {
   position: absolute;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  color: #333;
 }
 .note .note-head {
   height: 30px;
@@ -75,19 +138,20 @@ body {
   top: 5px;
   cursor: pointer;
   opacity: 0;
-  -webkit-transform: opacity 0.3s;
-  transform: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
   color: #fff;
 }
 .note .note-ct {
   padding: 15px 10px;
   margin: -1px 0;
+  outline: none;
 }
 .note .note-info {
   text-align: right;
   font-size: 14px;
   padding-right: 10px;
-  color: #fff;
+  color: #eff;
   padding-bottom: 10px;
 }
 .note .note-info .note-time {
@@ -107,9 +171,9 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%);
   transform: translate(-50%);
-  border: 1px solid #fff;
   border-radius: 5px;
-  background-color: #fff;
+  background: rgba(248, 129, 146, 0.6);
+  color: #eff;
   text-align: center;
   line-height: 30px;
 }
